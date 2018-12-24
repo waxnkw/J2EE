@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mall</title>
+    <style type="text/css">
+        .rTable {
+            display: table;
+            width: 80%;
+        }
+        .rTableRow {
+            display: table-row;
+        }
+        .rTableHeading {
+            display: table-header-group;
+            background-color: #ddd;
+        }
+        .rTableCell, .rTableHead {
+            display: table-cell;
+            padding: 3px 10px;
+            border: 1px solid #999999;
+        }
+        .rTableHeading {
+            display: table-header-group;
+            background-color: #ddd;
+            font-weight: bold;
+        }
+        .rTableFoot {
+            display: table-footer-group;
+            font-weight: bold;
+            background-color: #ddd;
+        }
+        .rTableBody {
+            display: table-row-group;
+        }
+
+    </style>
+
+</head>
+<body>
+<header>
+    <h1>商场</h1>
+</header>
+
+<div style="position: relative">
+    <form action="/Logout?jid" method="get">
+        <input type="submit" value="登出" style="color: red; position: absolute; top: 10px; right: 10px">
+    </form>
+</div>
+
+</br>
+
+<div>
+    <form id="category-form" action="/Mall?jid" method="get">
+        <select form="category-form" name="category">
+            <option value ="全部">全部</option>
+            <option value ="男装">男装</option>
+            <option value="饮料">饮料</option>
+            <option value="手机">手机</option>
+        </select>
+        <input type="hidden" name="op" value="category">
+        <input type="submit" value="choose">
+    </form>
+</div>
+
+<div class="container">
+
+        <div class="rTable">
+            <div class="rTableHeading">
+                <div class="rTableHead">种类</div>
+                <div class="rTableHead">商品id</div>
+                <div class="rTableHead">商品名</div>
+                <div class="rTableHead">单价</div>
+                <div class="rTableHead">描述</div>
+                <div class="rTableHead">购买数量</div>
+                <div class="rTableHead">#</div>
+            </div>
+
+            <div class="rTableBody">
+                <div class="rTableRow">
+                    <div class="rTableCell">男装</div>
+                    <div class="rTableCell">1</div>
+                    <div class="rTableCell">七匹狼</div>
+                    <div class="rTableCell">10</div>
+                    <div class="rTableCell">一件神奇男装</div>
+                    <div class="rTableCell">
+                    <form action="/Mall?jid" method="post">
+                        <div class="rTableCell"><input type="number" name="num" min="0" style="text-align: center"></div>
+                        <div class="rTableCell"><input type="submit" value="加入购物车"></div>
+                        <input type="hidden" name="gid" value="1">
+                        <input type="hidden" name="op" value="add">
+                    </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <!-- pin -->
+
+
+</div>
+
+<table>
+    <tr>
+        <td>
+            <form action="/Mall?jid" method="get">
+                <!-- pin -->
+                <input type="hidden" name="op" value="last">
+                <input type="submit" value="<-" style="white-space: nowrap">
+            </form>
+        </td>
+        <td>
+            <form action="/Mall?jid" method="get" style="white-space: nowrap">
+                <!-- pin -->
+                <input type="hidden" name="op" value="next">
+                <input type="submit" value="->">
+            </form>
+        </td>
+    </tr>
+</table>
+
+<div>
+    <form action="/Cart?jid" method="get">
+        <input type="submit" value="购物车">
+        <!-- pin -->
+        <input type="hidden" name="uid" value="?uid">
+        <input type="hidden" name="op" value="cart">
+    </form>
+</div>
+
+</body>
+</html>

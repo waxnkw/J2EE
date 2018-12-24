@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buySuccess</title>
+
+    <style type="text/css">
+        .rTable {
+            display: table;
+            width: 80%;
+        }
+        .rTableRow {
+            display: table-row;
+        }
+        .rTableHeading {
+            display: table-header-group;
+            background-color: #ddd;
+        }
+        .rTableCell, .rTableHead {
+            display: table-cell;
+            padding: 3px 10px;
+            border: 1px solid #999999;
+        }
+        .rTableHeading {
+            display: table-header-group;
+            background-color: #ddd;
+            font-weight: bold;
+        }
+        .rTableFoot {
+            display: table-footer-group;
+            font-weight: bold;
+            background-color: #ddd;
+        }
+        .rTableBody {
+            display: table-row-group;
+        }
+    </style>
+
+</head>
+<body>
+<header>
+    <h1>购买成功</h1>
+    <h2>商品总价： ?cost</h2>
+    <h2>实际花销： ?actual</h2>
+    <h2>促销状况： ?rate</h2>
+    <h2>余额： ?remain</h2>
+</header>
+
+<div class="rTable">
+    <div class="rTableHeading">
+        <div class="rTableHead">种类</div>
+        <div class="rTableHead">商品id</div>
+        <div class="rTableHead">商品名</div>
+        <div class="rTableHead">单价</div>
+        <div class="rTableHead">描述</div>
+        <div class="rTableHead">购买数量</div>
+        <div class="rTableHead">花费</div>
+    </div>
+
+    <div class="rTableBody">
+        ?buyinfos
+
+        <div class="rTableFoot">
+            <div class="rTableCell">总共</div>
+            <div class="rTableCell">?cost</div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <form action="/Mall?jid" method="get">
+        <input type="submit" value="返回">
+    </form>
+</div>
+
+</body>
+</html>
